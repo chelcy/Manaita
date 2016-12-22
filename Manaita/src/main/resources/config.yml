@@ -1,0 +1,11 @@
+settings:
+  mysql:
+    url: 'localhost'
+    db: 'DBName'
+    user: 'user'
+    password: 'password'
+  twitter:
+    OAuthConsumerKey: 'consumerkey'
+    OAuthConsumerSecret: 'consumersecret'
+    OAuthAccessToken: 'accesstoken'
+    OAuthAccessTokenSecret: 'accesstokensecret'

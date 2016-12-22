@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.mchel.plugin.manaita</groupId>
+	<artifactId>Manaita</artifactId>
+	<version>0.0.1</version>
+
+	<repositories>
+		<repository>
+			<id>spigotmc-public</id>
+			<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>chelcy-main</id>
+			<url>http://library.mchel.net/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>bukkit</artifactId>
+			<version>1.8.8-R0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot</artifactId>
+			<version>1.8.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vexsoftware</groupId>
+			<artifactId>votifier</artifactId>
+			<version>1.9</version>
+		</dependency>
+		<dependency>
+			<groupId>net.mchel.plugin.pointapi</groupId>
+			<artifactId>PointAPI</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<!-- Twitter4J -->
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-core</artifactId>
+			<version>4.0.4</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<!-- ここから依存ライブラリも一緒にコンパイルするFat jarの処理 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<artifactSet>
+								<!-- 含める依存ライブラリ -->
+								<includes>
+									<include>org.twitter4j:twitter4j-core</include>
+								</includes>
+								<!-- 含めない依存ライブラリ -->
+								<excludes>
+								</excludes>
+							</artifactSet>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- ここまで -->
+		</plugins>
+	</build>
+
+</project>

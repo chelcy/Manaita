@@ -1,0 +1,64 @@
+name: Manaita
+main: net.mchel.plugin.manaita.Manaita
+version: 0.0.1
+author: Chelcy Network
+depends: [PointAPI , Votifier]
+description: Manaita Server Core Plugin
+website: http://wiki.mchel.net
+loadbefore: [PointAPI , Votifier]
+commands:
+  manaita:
+    description: manaita cmd
+    usage: /<command>
+  home:
+    description: home cmd
+    aliases: [h]
+    usage: /<command>
+  sethome:
+    description: sethome cmd
+    usage: /<command>
+  spawn:
+    description: spawn cmd
+    aliases: [SPAWN , sw , SW]
+    usage: /<command>
+  lobby:
+    description: lobby cmd
+    aliases: [LOBBY , lb , LB]
+    usage: /<command>
+  manaitahelp:
+    description: server help command
+    usage: /<command>
+  gomi:
+    description: gomi gomi
+    aliases: [dust , g]
+    usage: /<command>
+  craft:
+    description: crafting table
+    usage: /<command>
+  shop:
+    description: shop command
+    usage: /<command>
+  rule:
+    description: rule command
+    usage: /<command>
+  rank:
+    description: rank command
+    usage: /<command>
+  menu:
+    description: menu command
+    usage: /<command>
+  hn:
+    description: hn command
+    usage: /<command>
+  ch:
+    description: hn command
+    aliases: [chat , channel]
+    usage: /<command>
+  statistics:
+    description: statistics cmd
+    aliases: [stat , statis]
+    usage: /<command>
+permissions:
+  manaita.manage:
+    description: manager perm
+    default: op
